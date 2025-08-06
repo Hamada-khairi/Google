@@ -245,12 +245,17 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // Educational alert instead of actually processing credentials
-            alert(`🚨 PHISHING ATTEMPT DETECTED!\n\nThis would have stolen:\nEmail: ${email}\nPassword: ${password}\n\nNEVER enter real credentials on suspicious sites!\n\nThis is why you should:\n• Always check the URL\n• Look for HTTPS\n• Verify the site's authenticity\n• Use 2FA when possible`);
-            
-            // Clear the form
-            document.getElementById('email').value = '';
-            document.getElementById('password').value = '';
+            if (email && password) {
+                // Show brief educational message then redirect to Rick Roll
+                alert(`🚨 YOU'VE BEEN PHISHED!\n\nCredentials captured:\nEmail: ${email}\nPassword: [HIDDEN]\n\nThis demonstrates how phishing works!\nAlways verify URLs and be cautious with login forms.`);
+                
+                // Redirect to Rick Roll after short delay
+                setTimeout(function() {
+                    window.location.href = 'https://youtu.be/xvFZjo5PgG0?list=RDxvFZjo5PgG0';
+                }, 2000);
+            } else {
+                alert('Please enter both email and password to see the demonstration.');
+            }
         });
 
         // Add some educational logging
