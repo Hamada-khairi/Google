@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 48px 40px 36px;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .logo img {
+            height: 24px;
+        }
+
+        .google-logo {
+            font-size: 24px;
+            font-weight: 400;
+            color: #5f6368;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #5f6368;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 8px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 1px #1a73e8;
+        }
+
+        .forgot-password {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+        }
+
+        .create-account {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .create-account:hover {
+            text-decoration: underline;
+        }
+
+        .next-btn {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 9px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .next-btn:hover {
+            background-color: #1765cc;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #856404;
+            font-size: 14px;
+        }
+
+        .warning strong {
+            color: #d63031;
+        }
+
+        .demo-info {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #1976d2;
+        }
+
+        .phishing-indicators {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffebee;
+            border: 1px solid #f44336;
+            border-radius: 4px;
+        }
+
+        .phishing-indicators h3 {
+            color: #d32f2f;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .phishing-indicators ul {
+            color: #c62828;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .phishing-indicators li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="warning">
+            <strong>⚠️ EDUCATIONAL DEMONSTRATION ONLY</strong><br>
+            This is a simulated phishing page for cybersecurity training purposes. No real login credentials should be entered.
+        </div>
+
+        <div class="google-logo">
+            <svg width="74" height="24" viewBox="0 0 74 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.24 8.19v2.46h5.88c-.18 1.38-.64 2.39-1.34 3.1-.86.86-2.2 1.8-4.54 1.8-3.62 0-6.45-2.92-6.45-6.54s2.83-6.54 6.45-6.54c1.95 0 3.38.77 4.43 1.76L15.4 2.5C13.94 1.08 11.98 0 9.24 0 4.28 0 .18 4.04.18 9s4.1 9 9.06 9c2.68 0 4.70-.88 6.26-2.52 1.60-1.60 2.10-3.85 2.10-5.68 0-.56-.04-1.08-.13-1.51H9.24V8.19z" fill="#4285F4"/>
+                <path d="M25 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.47 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z" fill="#EA4335"/>
+                <path d="M53.58 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.47 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z" fill="#34A853"/>
+                <path d="M38 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.47 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z" fill="#FBBC05"/>
+                <path d="M71 6.19c-1.96 0-3.81.54-5.21 1.64l1.85 1.85c.58-.62 1.76-1.19 3.36-1.19 1.71 0 2.73.73 3.06 1.80v.33c-.51-.25-1.39-.62-2.73-.62-2.17 0-4.06 1.28-4.06 3.23 0 1.99 1.76 3.36 4.2 3.36 1.72 0 2.5-.73 3.06-1.51h.25v1.05h2.38v-5.37c0-2.64-1.85-3.54-4.16-3.54zm-.47 9.33c-.73 0-1.83-.37-1.83-1.34 0-1.17 1.28-1.64 2.39-1.64.96 0 1.64.25 2.10.64-.18 1.05-.72 2.34-2.66 2.34z" fill="#EA4335"/>
+            </svg>
+        </div>
+
+        <h1>Sign in</h1>
+        <p class="subtitle">to continue to Google</p>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email or phone" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group">
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <div class="button-container">
+                <a href="#" class="create-account">Create account</a>
+                <button type="submit" class="next-btn">Next</button>
+            </div>
+        </form>
+
+        <div class="demo-info">
+            <strong>🎓 Educational Purpose:</strong> This page demonstrates how attackers create fake login pages to steal credentials. Always verify the URL and look for security indicators before entering sensitive information.
+        </div>
+
+        <div class="phishing-indicators">
+            <h3>🔍 Red Flags to Look For:</h3>
+            <ul>
+                <li>Check the URL carefully - is it really google.com?</li>
+                <li>Look for HTTPS and the padlock icon</li>
+                <li>Examine the certificate details</li>
+                <li>Be suspicious of urgent or threatening messages</li>
+                <li>Watch for spelling/grammar mistakes</li>
+                <li>Verify the sender's email address</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Educational alert instead of actually processing credentials
+            alert(`🚨 PHISHING ATTEMPT DETECTED!\n\nThis would have stolen:\nEmail: ${email}\nPassword: ${password}\n\nNEVER enter real credentials on suspicious sites!\n\nThis is why you should:\n• Always check the URL\n• Look for HTTPS\n• Verify the site's authenticity\n• Use 2FA when possible`);
+            
+            // Clear the form
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+        });
+
+        // Add some educational logging
+        document.getElementById('email').addEventListener('input', function() {
+            console.log('⚠️ Educational Demo: Email input detected');
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            console.log('⚠️ Educational Demo: Password input detected');
+        });
+    </script>
+</body>
+</html>
